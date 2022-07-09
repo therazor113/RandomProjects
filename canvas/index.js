@@ -7,11 +7,10 @@ document.querySelector('.push').addEventListener('click', () => {
     Math.floor(Math.random()*16777215).toString(16)).show()
   }
 })
+
 let x = document.createElement('canvas')
 x.style.backgroundColor = 'black'
 let obj = x.getContext('2d')
-
-
 document.body.appendChild(x)
 
 class cube {
