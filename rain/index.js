@@ -23,25 +23,21 @@ class Rain {
   fall() {
     this.show()
     this.y += this.velocity
-    if (this.y >= canvas.height - this.height) {
+    if (this.y >= canvas.height) {
       drop.shift()
     } else this.velocity += gravity
   }
 }
 
-
 const drop = []
 setInterval(() => {
   drop.push(new Rain(Math.random()*1024))
-}, 8);
-  
-
+}, 5);
 
 function animate() {
   window.requestAnimationFrame(animate)
   c.fillStyle = 'black'
   c.fillRect(0, 0, canvas.width, canvas.height)
-  drop.push(new Rain(Math.random()*1024))
   for (let i = 0; i < drop.length; i++) {
     drop[i].fall()
   }
