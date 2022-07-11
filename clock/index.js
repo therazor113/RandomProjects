@@ -20,7 +20,7 @@ class Arc {
   draw() {
     c.strokeStyle = this.color
     c.beginPath()
-    c.arc(this.x, this.y, this.r, 0, this.time/(Math.PI*3))
+    c.arc(this.x, this.y, this.r, 0, this.time)
     c.stroke()
   }
 }
@@ -33,7 +33,7 @@ setInterval(() => {
     x:115,
     y: 90,
     r: 75,
-    time: date.getSeconds(),
+    time: date.getSeconds()/(Math.PI*3),
     color: 'blue'
   }).draw()
 
@@ -41,7 +41,7 @@ setInterval(() => {
     x:115,
     y: 90,
     r: 85,
-    time: date.getMinutes(),
+    time: date.getMinutes()/(Math.PI*3),
     color: 'green'
   }).draw()
 
@@ -49,7 +49,7 @@ setInterval(() => {
     x:115,
     y: 90,
     r: 95,
-    time: date.getHours(),
+    time: date.getHours()/(Math.PI*1.2),
     color: 'red'
   }).draw()
 }, 500)
