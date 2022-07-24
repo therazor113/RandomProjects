@@ -17,3 +17,5 @@ function multiplier(factor) {
 
 const doubler = multiplier(2)
 const tripler = multiplier(3)
+
+console.log(3 / 3)

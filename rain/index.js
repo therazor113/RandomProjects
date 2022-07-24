@@ -12,7 +12,7 @@ class Rain {
     this.y = -20
     this.width = 5
     this.height = 20
-    this.velocity = 0
+    this.velocity = 5
   }
 
   show() {
@@ -24,15 +24,19 @@ class Rain {
     this.show()
     this.y += this.velocity
     if (this.y >= canvas.height) {
-      drop.shift()
+      this.y = -20
+      this.velocity = 5
+      this.x = Math.random()*1024
     } else this.velocity += gravity
   }
 }
-
+let a = 0
 const drop = []
-setInterval(() => {
-  drop.push(new Rain(Math.random()*1024))
-}, 5);
+  setInterval(() => {
+    if (drop.length < 150) {
+    drop.push(new Rain(Math.random()*1024))
+    }
+  }, 5);
 
 function animate() {
   window.requestAnimationFrame(animate)
@@ -44,3 +48,5 @@ function animate() {
 }
 
 animate()
+
+console.log(new Date().toLocaleDateString().replace(/[-./]/g, '-'))
